@@ -1,4 +1,3 @@
-using UnityEngine;
 using Zenject;
 using ProCalculate.Dialog;
 
@@ -7,9 +6,6 @@ namespace ProCalculate.Calculator
 {
     public class ProjectInstaller : MonoInstaller
     {
-        [SerializeField] private CalculatorView _calculatorView;
-        [SerializeField] private ErrorPopupView _errorPopupView;
-
         public override void InstallBindings()
         {
             SignalBusInstaller.Install(Container);

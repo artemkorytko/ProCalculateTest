@@ -46,6 +46,20 @@ namespace ProCalculate.Calculator
             {
                 _logger.Log($"Invalid expression: {expression}");
                 _signalBus.Fire(new CalculationErrorSignal { Expression = expression, Message = "Invalid expression format" });
+                _history.Add($"{expression} = ERROR");
+                try
+                {
+                    _storage.SaveState(new StorageState
+                    {
+                        CurrentExpression = expression,
+                        History = new List<string>(_history)
+                    });
+                }
+                catch (Exception e)
+                {
+                    _logger.LogError($"Storage save error: {e}");
+                }
+
                 return;
             }
 

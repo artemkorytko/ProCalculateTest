@@ -641,7 +641,7 @@ GameObject:
   - component: {fileID: 7899321000690772160}
   - component: {fileID: 7871391845192980400}
   m_Layer: 5
-  m_Name: CalculatorPanel
+  m_Name: CalculatorView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
